@@ -1,0 +1,17 @@
+sudo gem install soloist --no-ri --no-rdoc
+
+mkdir -p ~/projects && cd ~/projects
+mkdir -p chef/cookbooks/pivotal_workstation && cd chef/cookbooks/pivotal_workstation
+curl -L http://github.com/pivotal/pivotal_workstation/tarball/master | gunzip | tar xvf - --strip=1
+
+cd ~/projects
+echo "cookbook_paths:
+- ./chef/cookbooks
+recipes:
+<% @soloist_script.recipes.each do |recipe| %>
+- <%= recipe %>
+<% end %>
+" > soloistrc
+
+cd ~/projects
+soloist

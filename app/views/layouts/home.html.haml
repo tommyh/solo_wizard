@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title SoloWizard
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body
+    = render "shared/fork_me_on_github"
+    #wrapper
+      #header
+        %h1 SoloWizard
+        %h2 Who says you can't bootstrap your machine with a one-liner?
+
+      #content
+        = yield

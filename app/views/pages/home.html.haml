@@ -1,0 +1,24 @@
+#sw-tagline
+  %p= %[If #{link_to "chef", "http://google.com"} has ever seemed just out of reach, say hello to SoloWizard!  You'll be up and running with chef-solo in seconds!].html_safe
+
+#sw-explained
+  #sw-description
+    %p= %[SoloWizard installs the #{link_to "soloist gem", "http://google.com"}, downloads the #{link_to "pivotal_workstation cookbook"}, and runs soloist.].html_safe
+
+  #sw-video
+    :plain
+      <iframe src="http://player.vimeo.com/video/25329849?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+- if @default_soloist_script.present?
+  #sw-default
+    %h3 bootstrap your OS X machine with some sensible defaults:
+    %p (mySQL, rvm, git, homebrew, memcached, nodejs, etc.)
+    %pre.code
+      = @default_soloist_script.shell_install_command
+
+
+#sw-custom
+  %h3 create a custom Solo Wizard script:
+  %p Select your recipes and let Solo Wizard work its magic.
+  = render "soloist_scripts/form"

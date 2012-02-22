@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %title SoloWizard
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body
+    = render "shared/fork_me_on_github"
+    #wrapper
+      #content
+        .page-header
+          %h1= link_to "SoloWizard", root_url
+          %p.tagline one-liners with the power to bootstrap your machine
+
+        = render "shared/flash_messages"
+        = yield

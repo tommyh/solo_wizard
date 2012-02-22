@@ -1,0 +1,8 @@
+- if @soloist_script.errors.present?
+  %ul
+    - @soloist_script.errors.full_messages.each do |message|
+      - if message == "Recipes can't be blank"
+        %li
+          You can't create a SoloWizard Script without choosing some recipes.  Please check some of the boxes below.
+      - else
+        %li= message
