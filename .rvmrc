@@ -1,1 +1,1 @@
-rvm use ruby-1.9.2@solo_wizard --create
+rvm use ruby-1.9.2@solo_wizard-old --create
