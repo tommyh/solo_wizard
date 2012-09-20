@@ -11,10 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130054613) do
+ActiveRecord::Schema.define(:version => 20120909053051) do
+
+  create_table "recipe_groups", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recipe_selections", :force => true do |t|
+    t.integer  "recipe_id"
+    t.integer  "soloist_script_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recipes", :force => true do |t|
+    t.string   "name"
+    t.integer  "recipe_group_id"
+    t.integer  "row_order_position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "soloist_scripts", :force => true do |t|
-    t.text     "recipes"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "uid"

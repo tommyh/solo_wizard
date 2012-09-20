@@ -9,7 +9,7 @@ echo "cookbook_paths:
 - ./chef/cookbooks
 recipes:
 <% @soloist_script.recipes.each do |recipe| %>
-- <%= recipe %>
+- <%= recipe.name %>
 <% end %>
 " > soloistrc
 

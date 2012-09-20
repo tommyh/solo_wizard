@@ -13,9 +13,10 @@
 - if @default_soloist_script.present?
   #sw-default
     %h3 bootstrap your OS X machine with some sensible defaults:
-    %p (mySQL, rvm, git, homebrew, memcached, nodejs, etc.)
     %pre.code
       = @default_soloist_script.shell_install_command
+    %p (this script has what is checked below)
+
 
 
 #sw-custom

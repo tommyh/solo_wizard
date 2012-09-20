@@ -10,9 +10,9 @@ describe PagesController do
 
     context "a soloist_script exists" do
       before do
-        @two = Factory :soloist_script, :id => 33
-        @one = Factory :soloist_script, :id => 22
-        @three = Factory :soloist_script, :id => 44
+        @two = FactoryGirl.create :soloist_script, :id => 33
+        @one = FactoryGirl.create :soloist_script, :id => 22
+        @three = FactoryGirl.create :soloist_script, :id => 44
         @one.id.should == 22
       end
 

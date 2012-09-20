@@ -1,8 +1,9 @@
 class SoloistScript < ActiveRecord::Base
-  serialize :recipes
+  has_many :recipe_selections, :dependent => :destroy
+  has_many :recipes, :through => :recipe_selections
 
-  validates :recipes, :presence => true
   validates :uid, :presence => true
+  validates :recipes, :presence => true
 
   uniquify :uid, :length => 4, :chars => ('a'..'z').to_a + ('0'..'9').to_a
 

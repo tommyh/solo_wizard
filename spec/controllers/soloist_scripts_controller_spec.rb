@@ -10,16 +10,29 @@ describe SoloistScriptsController do
   end
 
   describe "POST create" do
+    before do
+      @recipe1 = FactoryGirl.create :recipe, :name => "abc"
+      @recipe2 = FactoryGirl.create :recipe, :name => "def"
+    end
+
     context "with valid params" do
       before do
-        @params =  {:soloist_script => {:recipes => ["foo", "bar"]}}
+        @params =  {:soloist_script => {:recipe_ids => [@recipe1.id, @recipe2.id] }}
       end
 
-      it "should create a SoloistScript" do
+      it "should create a soloist script" do
         lambda {
           post :create, @params
         }.should change(SoloistScript, :count).by(1)
-        assigns(:soloist_script).recipes.should =~ ["foo", "bar"]
+      end
+
+      it "should create 2 recipes for the soloist script" do
+        lambda {
+          post :create, @params
+        }.should change(RecipeSelection, :count).by(2)
+
+        recipes = assigns(:soloist_script).recipes
+        recipes.sort_by(&:name).should == [@recipe1, @recipe2]
       end
 
       it "should redirect to the show page" do
@@ -31,7 +44,12 @@ describe SoloistScriptsController do
 
   describe "GET show" do
     before do
-      @soloist_script = Factory :soloist_script, :recipes => ['pivotal_workstation:a', 'pivotal_workstation:b']
+      @recipe1 = FactoryGirl.create :recipe, :name => "abc"
+      @recipe2 = FactoryGirl.create :recipe, :name => "def"
+
+      @soloist_script = FactoryGirl.create :soloist_script
+      @soloist_script.recipe_ids = [@recipe1.id, @recipe2.id]
+      @soloist_script.save!
     end
 
     context "with a valid soloist_script uid" do
@@ -52,7 +70,8 @@ describe SoloistScriptsController do
         it "should contain the recipes" do
           get :show, :id => @soloist_script, :format => :sh
           response.body.should include("gem install soloist")
-          response.body.should include("- pivotal_workstation:a")
+          response.body.should include("- abc")
+          response.body.should include("- def")
         end
       end
     end

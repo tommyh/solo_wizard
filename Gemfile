@@ -9,13 +9,14 @@ gem "haml-rails", "0.3.4"
 gem "simple_form", "1.5.2"
 gem "uniquify", "0.1.1", :git => "git://github.com/tommyh/uniquify.git"
 gem "thor", "0.14.6"
+gem "gmail"
 
 
 group :test do
   gem 'turn', '0.8.2', :require => false
   gem 'rspec', '2.8.0'
-  gem "factory_girl", '2.4.0'
-  gem "factory_girl_rails", "1.5.0"
+  gem "factory_girl", '4.1.0'
+  gem "factory_girl_rails", "4.1.0"
   gem "cucumber", "1.1.4"
   gem "cucumber-rails", "1.2.1"
   gem 'database_cleaner'

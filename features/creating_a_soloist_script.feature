@@ -3,6 +3,9 @@ Feature: Creating a soloist script
   I would like to create a soloist script
   So that I can use soloist on my computer
 
+  Background:
+    Given some recipes have been created
+
   Scenario: Creating a soloist script with the defaults
     Given I am on the new soloist script page
     And I press create

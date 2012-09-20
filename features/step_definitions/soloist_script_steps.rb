@@ -22,14 +22,14 @@ Then /^I should be located on the show page for my soloist script$/ do
 end
 
 Given /^I uncheck all of the recipes$/ do
-  recipe_inputs = all("form#new_soloist_script input[name='soloist_script[recipes][]']")
+  recipe_inputs = all("form#new_soloist_script input[type='checkbox']")
   recipe_inputs.each do |input|
     input.set(false)  #uncheck it
   end
 end
 
 Given /^I check one recipe$/ do
-  recipe_input = find("form#new_soloist_script input[name='soloist_script[recipes][]']")
+  recipe_input = find("form#new_soloist_script input[type='checkbox']")
   recipe_input.set(true)
 end
 
@@ -38,7 +38,15 @@ Then /^an error message should appear telling me I need to choose some recipes$/
 end
 
 Given /^a default soloist script has been created$/ do
-  @default_soloist_script = Factory :soloist_script
+  recipe1 = FactoryGirl.create :recipe, :name => "pivotal_workstation:rvm"
+  recipe2 = FactoryGirl.create :recipe, :name => "pivotal_workstation:mysql"
+  @default_soloist_script = FactoryGirl.create :soloist_script, :recipe_ids => [recipe1.id, recipe2.id]
+end
+
+Given /^some recipes have been created$/ do
+  FactoryGirl.create :recipe
+  FactoryGirl.create :recipe
+  FactoryGirl.create :recipe
 end
 
 Then /^there should be a real soloist script example$/ do
