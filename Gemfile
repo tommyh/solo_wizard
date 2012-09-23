@@ -9,7 +9,6 @@ gem "haml-rails", "0.3.4"
 gem "simple_form", "1.5.2"
 gem "uniquify", "0.1.1", :git => "git://github.com/tommyh/uniquify.git"
 gem "thor", "0.14.6"
-gem "gmail"
 
 
 group :test do
