@@ -18,16 +18,16 @@ class SoloWizardTasks < Thor
 
   desc "create_pivotal_workstation_recipes", "Create the initial set of recipes from pivotal workstation"
   def create_pivotal_workstation_recipes
-    group01 = RecipeGroup.create :name => "Development Stack"
-    group02 = RecipeGroup.create :name => "Databases"
-    group03 = RecipeGroup.create :name => "General Software"
-    group04 = RecipeGroup.create :name => "OS-X Settings", :description => "Configuring your OS-X with some helpful settings"
-    group05 = RecipeGroup.create :name => ".bash_profile"
-    group06 = RecipeGroup.create :name => "Command Line Tools"
-    group07 = RecipeGroup.create :name => "Source Control"
-    group08 = RecipeGroup.create :name => "Text Editors"
-    group09 = RecipeGroup.create :name => "Etc"
-    group10 = RecipeGroup.create :name => "Pivotal Workstation Meta", :description => "Each 'Meta' recipe is a collection of other recipes"
+    group01 = RecipeGroup.create :name => "Development Stack", :position => 1
+    group02 = RecipeGroup.create :name => "Databases", :position => 2
+    group03 = RecipeGroup.create :name => "General Software", :position => 6
+    group04 = RecipeGroup.create :name => "OS-X Settings", :position => 7, :description => "Configuring your OS-X with some helpful settings"
+    group05 = RecipeGroup.create :name => ".bash_profile", :position => 8
+    group06 = RecipeGroup.create :name => "Command Line Tools", :position => 3
+    group07 = RecipeGroup.create :name => "Source Control", :position => 4
+    group08 = RecipeGroup.create :name => "Text Editors", :position => 5
+    group09 = RecipeGroup.create :name => "Etc", :position => 9
+    group10 = RecipeGroup.create :name => "Pivotal Workstation Meta", :position => 10, :description => "Each 'Meta' recipe is a collection of other recipes"
 
     group06.recipes.create :name => "ack"
     group04.recipes.create :name => "active_corners"

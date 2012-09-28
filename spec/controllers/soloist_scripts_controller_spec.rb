@@ -7,6 +7,14 @@ describe SoloistScriptsController do
       get :new
       assigns(:soloist_script).should be_instance_of(SoloistScript)
     end
+
+    it "should assign @recipe_groups" do
+      FactoryGirl.create :recipe_group
+      FactoryGirl.create :recipe_group
+
+      get :new
+      assigns(:recipe_groups).should be_present
+    end
   end
 
   describe "POST create" do
@@ -38,6 +46,30 @@ describe SoloistScriptsController do
       it "should redirect to the show page" do
         post :create, @params
         response.should redirect_to soloist_script_path(assigns(:soloist_script))
+      end
+    end
+
+    context "with invalid params" do
+      before do
+        @params =  {:soloist_script => {:recipe_ids => [] }}
+      end
+
+      it "should not create a soloist script" do
+        lambda {
+          post :create, @params
+        }.should_not change(SoloistScript, :count)
+      end
+
+      it "should render the edit page" do
+        post :create, @params
+
+        response.should render_template("new")
+      end
+
+      it "should assign recipe_groups so the user can fill in the form again" do
+        post :create, @params
+
+        assigns(:recipe_groups).should be_present
       end
     end
   end

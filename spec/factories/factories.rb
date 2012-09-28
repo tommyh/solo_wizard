@@ -7,6 +7,7 @@ FactoryGirl.define do
   factory :recipe_group do
     sequence(:name) { |n| "Databases #{n}" }
     description "Databases are useful for storing data."
+    sequence(:position)
   end
 
   factory :recipe_selection do

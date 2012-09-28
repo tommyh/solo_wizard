@@ -3,14 +3,14 @@
     #sw-customizer
       = render "soloist_scripts/error_messages"
 
-      - Recipe.all.group_by(&:recipe_group).each do |recipe_group, recipes|
+      - @recipe_groups.each do |recipe_group|
         .category-field
           .category-description
             %h4= recipe_group.name
             %p= recipe_group.description
 
           %fieldset.recipe-selector
-            - recipes.each do |recipe|
+            - recipe_group.recipes.each do |recipe|
               .recipe-pair
                 = check_box_tag 'soloist_script[recipe_ids][]', recipe.id, true
                 = label_tag :recipe_ids, recipe.name

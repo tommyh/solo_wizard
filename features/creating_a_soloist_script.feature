@@ -6,7 +6,14 @@ Feature: Creating a soloist script
   Background:
     Given some recipes have been created
 
-  Scenario: Creating a soloist script with the defaults
+  Scenario: Creating a soloist script with the defaults from the homepage
+    Given I am on the homepage
+    And I press create
+    Then a soloist script should be created with some recipes
+    And I should be located on the show page for my soloist script
+    And I should see "SoloWizard has successfully created your Soloist script"
+
+  Scenario: Creating a soloist script with the defaults from the new soloist script page
     Given I am on the new soloist script page
     And I press create
     Then a soloist script should be created with some recipes

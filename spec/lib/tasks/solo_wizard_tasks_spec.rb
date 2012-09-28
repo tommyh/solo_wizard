@@ -48,7 +48,16 @@ describe SoloWizardTasks do
 
       r.recipe_group.should == rg
     end
+
+    it "should assign a position attribute to all of the RecipeGroups" do
+      SoloWizardTasks.new.create_pivotal_workstation_recipes
+
+      rg_count = RecipeGroup.count
+      RecipeGroup.where("position IS NOT NULL").count.should == rg_count
+      RecipeGroup.where("position IS NULL").count.should_not == rg_count
+    end
   end
+
 
   describe "#clean_all_tables" do
     before do

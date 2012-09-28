@@ -44,12 +44,15 @@ Given /^a default soloist script has been created$/ do
 end
 
 Given /^some recipes have been created$/ do
-  FactoryGirl.create :recipe
-  FactoryGirl.create :recipe
-  FactoryGirl.create :recipe
+  recipe_group_1 = FactoryGirl.create :recipe_group
+  recipe_group_2 = FactoryGirl.create :recipe_group
+
+  FactoryGirl.create :recipe, :recipe_group => recipe_group_1
+  FactoryGirl.create :recipe, :recipe_group => recipe_group_1
+  FactoryGirl.create :recipe, :recipe_group => recipe_group_2
 end
 
 Then /^there should be a real soloist script example$/ do
-  page.should have_content("bootstrap your OS X machine with some sensible defaults")
+  page.should have_content("use our default install script w/ sensible defaults")
   page.should have_content(soloist_script_path(@default_soloist_script, :format => "sh"))
 end

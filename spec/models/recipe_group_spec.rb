@@ -14,5 +14,9 @@ describe RecipeGroup do
       FactoryGirl.create(:recipe_group, :name => "hello").should be_valid
       FactoryGirl.build(:recipe_group, :name => "hello").should be_invalid
     end
+
+    it "should require a position attribute" do
+      FactoryGirl.build(:recipe_group, :position => nil).should be_invalid
+    end
   end
 end

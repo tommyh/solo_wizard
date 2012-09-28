@@ -1,9 +1,14 @@
 #sw-tagline
-  %p= %[If #{link_to "chef", "http://google.com"} has ever seemed just out of reach, say hello to SoloWizard!  You'll be up and running with chef-solo in seconds!].html_safe
+  %p Many teams use chef to manage their production machines, but developers often build their development boxes by hand.  SoloWizard makes it painless to create a customized chef solo script to get your development machine humming - from mysql to sublime text to .bash_profile tweaks to OS-X settings - it's all there!
 
 #sw-explained
   #sw-description
-    %p= %[SoloWizard installs the #{link_to "soloist gem", "http://google.com"}, downloads the #{link_to "pivotal_workstation cookbook"}, and runs soloist.].html_safe
+    %p Dependencies:
+    %ul
+      %li OS-X Mountain Lion
+      %li
+        X-Code installed
+        =link_to "(install how-to)", "#"
 
   #sw-video
     :plain
@@ -12,7 +17,7 @@
 
 - if @default_soloist_script.present?
   #sw-default
-    %h3 bootstrap your OS X machine with some sensible defaults:
+    %h3 Option 1 - use our default install script w/ sensible defaults:
     %pre.code
       = @default_soloist_script.shell_install_command
     %p (this script has what is checked below)
@@ -20,6 +25,6 @@
 
 
 #sw-custom
-  %h3 create a custom Solo Wizard script:
-  %p Select your recipes and let Solo Wizard work its magic.
+  %h3 Option 2 - create a custom SoloWizard script:
+  %p Select your recipes and let SoloWizard work its magic.
   = render "soloist_scripts/form"

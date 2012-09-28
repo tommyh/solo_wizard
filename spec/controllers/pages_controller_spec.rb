@@ -32,5 +32,14 @@ describe PagesController do
         assigns(:default_soloist_script).should be_nil
       end
     end
+
+    it "should assign @recipe_groups" do
+      FactoryGirl.create :recipe_group
+      FactoryGirl.create :recipe_group
+
+      get :home
+      assigns(:recipe_groups).should be_present
+    end
   end
+
 end
