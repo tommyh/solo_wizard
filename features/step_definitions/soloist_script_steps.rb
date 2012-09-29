@@ -4,7 +4,7 @@ end
 
 Then /^I should be able to create a soloist script$/ do
   page.should have_selector("form#new_soloist_script")
-  page.should have_content("pivotal_workstation:rvm")
+  page.should have_selector(".recipe-pair input")
 end
 
 Then /^a soloist script should be created with (one|some) recipes?$/ do |one_or_some|
@@ -38,9 +38,7 @@ Then /^an error message should appear telling me I need to choose some recipes$/
 end
 
 Given /^a default soloist script has been created$/ do
-  recipe1 = FactoryGirl.create :recipe, :name => "pivotal_workstation:rvm"
-  recipe2 = FactoryGirl.create :recipe, :name => "pivotal_workstation:mysql"
-  @default_soloist_script = FactoryGirl.create :soloist_script, :recipe_ids => [recipe1.id, recipe2.id]
+  @default_soloist_script = FactoryGirl.create :soloist_script
 end
 
 Given /^some recipes have been created$/ do

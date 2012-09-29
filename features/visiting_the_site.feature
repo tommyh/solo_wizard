@@ -4,7 +4,8 @@ Feature: Visiting the site
   So that I don't leave instantly
 
   Background:
-    Given a default soloist script has been created
+    Given some recipes have been created
+    And a default soloist script has been created
 
   Scenario: A soloist script example should be ready for me to try
     Given I am on the homepage

@@ -4,9 +4,7 @@ class SoloWizardTasks < Thor
 
   desc "create_first_soloist_script", "Create the first soloist script"
   def create_first_soloist_script
-    soloist_script = SoloistScript.create
-    soloist_script.recipe_ids = Recipe.all.map(&:id)
-    soloist_script.save!
+    SoloistScript.create(:recipes => Recipe.all)
   end
 
   desc "clean_all_tables", "Empty out all of the tables"
