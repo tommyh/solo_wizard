@@ -2,6 +2,7 @@ FactoryGirl.define do
   factory :recipe do
     sequence(:name) {|n| "pivotal_workstation:foo_#{n}" }
     recipe_group
+    checked_by_default true
   end
 
   factory :recipe_group do

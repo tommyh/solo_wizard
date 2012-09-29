@@ -3,9 +3,17 @@ require 'spec_helper'
 describe PagesController do
 
   describe "GET home" do
-    it "should assign @soloist_script" do
+    before do
+      FactoryGirl.create :recipe
+      FactoryGirl.create :recipe
+    end
+
+    it "should create a new soloist_script with some recipes" do
       get :home
-      assigns(:soloist_script).should be_instance_of(SoloistScript)
+
+      soloist_script = assigns(:soloist_script)
+      soloist_script.should be_instance_of(SoloistScript)
+      soloist_script.recipes.should be_present
     end
 
     context "a soloist_script exists" do

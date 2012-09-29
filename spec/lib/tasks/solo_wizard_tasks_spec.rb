@@ -4,9 +4,9 @@ describe SoloWizardTasks do
 
   describe "#create_first_soloist_script" do
     before do
-      FactoryGirl.create :recipe
-      FactoryGirl.create :recipe
-      FactoryGirl.create :recipe
+      FactoryGirl.create :recipe, :checked_by_default => true
+      FactoryGirl.create :recipe, :checked_by_default => false
+      FactoryGirl.create :recipe, :checked_by_default => true
     end
 
     it "should create a soloist script" do
@@ -15,12 +15,12 @@ describe SoloWizardTasks do
       }.should change(SoloistScript, :count).by(1)
     end
 
-    it "should give it all of the recipes" do
+    it "should give it all of the recipes with checked_by_default of true" do
       SoloWizardTasks.new.create_first_soloist_script
       SoloistScript.all.count.should == 1
       soloist_script = SoloistScript.first
 
-      soloist_script.recipes.count.should == Recipe.count
+      soloist_script.recipes.size.should == 2
     end
   end
 
@@ -35,6 +35,12 @@ describe SoloWizardTasks do
       lambda {
         SoloWizardTasks.new.create_pivotal_workstation_recipes
       }.should change(Recipe, :count).by_at_least(120)
+    end
+
+    it "should create some recipes with checked by default of true" do
+      lambda {
+        SoloWizardTasks.new.create_pivotal_workstation_recipes
+      }.should change(Recipe.with_checked_by_default, :count).by_at_least(10)
     end
 
     it "should assign the mysql recipe to the databases group" do

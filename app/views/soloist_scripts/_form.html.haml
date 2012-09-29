@@ -1,5 +1,5 @@
 #sw-custom-form
-  = form_tag soloist_scripts_path, :id => "new_soloist_script" do
+  = form_for @soloist_script, :id => "new_soloist_script" do |f|
     #sw-customizer
       = render "soloist_scripts/error_messages"
 
@@ -12,8 +12,8 @@
           %fieldset.recipe-selector
             - recipe_group.recipes.each do |recipe|
               .recipe-pair
-                = check_box_tag 'soloist_script[recipe_ids][]', recipe.id, true
+                = check_box_tag :recipe_ids, recipe.id, @soloist_script.recipes.include?(recipe), :name => 'soloist_script[recipe_ids][]'
                 = label_tag :recipe_ids, recipe.name
 
       .submit_button
-        = submit_tag "create my script", :class => "awesome"
+        = f.submit "create my script", :class => "awesome"

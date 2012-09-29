@@ -3,6 +3,7 @@ class SoloistScriptsController < InheritedResources::Base
   respond_to :sh, :only => [:show]
 
   before_filter :load_recipe_groups, :only => [:new, :create]
+  before_filter :build_soloist_script_with_default_recipes, :only => [:new]
 
   def create
     create!(:notice => "SoloWizard has successfully created your Soloist script. Ooooh-aaaah...")

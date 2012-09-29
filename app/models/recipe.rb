@@ -6,4 +6,6 @@ class Recipe < ActiveRecord::Base
 
   validates :name, :presence => true, :uniqueness => true
   validates :recipe_group_id, :presence => true
+
+  scope :with_checked_by_default, where(:checked_by_default => true)
 end
