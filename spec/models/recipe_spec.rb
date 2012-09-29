@@ -19,4 +19,11 @@ describe Recipe do
       FactoryGirl.build(:recipe, :recipe_group => nil).should be_invalid
     end
   end
+
+  describe ".github_url" do
+    it "should return a url based on the recipe name" do
+      recipe = FactoryGirl.create :recipe, :name => "foo"
+      recipe.github_url.should == "https://github.com/pivotal/pivotal_workstation/blob/master/recipes/foo.rb"
+    end
+  end
 end
