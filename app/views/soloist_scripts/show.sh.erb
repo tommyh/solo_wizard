@@ -1,17 +1,29 @@
-sudo gem install soloist --no-ri --no-rdoc
+#!/bin/bash
 
-mkdir -p ~/projects && cd ~/projects
-mkdir -p chef/cookbooks/pivotal_workstation && cd chef/cookbooks/pivotal_workstation
-curl -L http://github.com/pivotal/pivotal_workstation/tarball/master | gunzip | tar xvf - --strip=1
+#  --- SoloWizard documentation here ---
 
-cd ~/projects
-echo "cookbook_paths:
-- ./chef/cookbooks
+
+
+pushd `pwd`
+if rvm --version 2>/dev/null; then
+  gem install soloist
+else
+  sudo gem install soloist
+fi
+
+mkdir -p ~/cookbooks; cd ~/cookbooks
+cat > soloistrc <<EOF
+cookbook_paths:
+- $PWD
 recipes:
-<% @soloist_script.recipes.each do |recipe| %>
-- <%= recipe.name %>
+<% @soloist_script.recipes.by_name.each do |recipe| %>
+- pivotal_workstation::<%= recipe.name %>
 <% end %>
-" > soloistrc
-
-cd ~/projects
+EOF
+if [[ -d pivotal_workstation ]]; then
+  cd pivotal_workstation && git pull && cd ..
+else
+  git clone https://github.com/pivotal/pivotal_workstation.git
+fi
 soloist
+popd
