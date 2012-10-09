@@ -3,7 +3,7 @@ body {
 }
 
 /* text settings */
-p {
+p, ul {
 	color:#424242;
 	font-family: Arial, sans-serif;
 	font-size:16px;
@@ -315,7 +315,6 @@ input.awesome {
 
 #sw-description .dependencies ul {
     margin-top: 0;
-    li { line-height: 1.3em; }
 }
 
 .flash-message {
