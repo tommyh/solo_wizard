@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 ruby '1.9.2'
 
 gem 'rails', '3.1.3'
-gem 'sqlite3'
+gem 'mysql2'
 gem 'jquery-rails'
 gem "inherited_resources", "1.3.0"
 gem "haml", "3.1.4"
