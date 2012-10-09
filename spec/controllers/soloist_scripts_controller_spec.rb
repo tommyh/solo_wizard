@@ -110,8 +110,8 @@ describe SoloistScriptsController do
         it "should contain the recipes" do
           get :show, :id => @soloist_script, :format => :sh
           response.body.should include("gem install soloist")
-          response.body.should include("- abc")
-          response.body.should include("- def")
+          response.body.should include("- pivotal_workstation::abc")
+          response.body.should include("- pivotal_workstation::def")
         end
       end
     end
