@@ -2,7 +2,7 @@ SoloWizard::Application.routes.draw do
 
   resources :soloist_scripts, :only => [:new, :create, :show]
 
-
+  match "error_page" => "pages#error_page"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
