@@ -9,8 +9,9 @@ class PagesController < ApplicationController
     @default_soloist_script = SoloistScript.order("id ASC").first
   end
 
-  def error_page
-    raise "this page should raise an error"
-  end
+  # Error page to test error monitoring is working
+  #def error_page
+  #  raise "this page should raise an error"
+  #end
 
 end
