@@ -12,6 +12,7 @@ gem "simple_form", "1.5.2"
 gem "uniquify", "0.1.1", :git => "git://github.com/tommyh/uniquify.git"
 gem "thor", "0.14.6"
 gem "airbrake", "3.1.5"
+gem "newrelic_rpm", "3.5.0"
 
 
 group :test do
