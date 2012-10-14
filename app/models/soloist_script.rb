@@ -5,7 +5,7 @@ class SoloistScript < ActiveRecord::Base
   validates :uid, :presence => true
   validates :recipes, :presence => true
 
-  uniquify :uid, :length => 4, :chars => ('a'..'z').to_a + ('0'..'9').to_a
+  uniquify :uid, :length => 6, :chars => ('a'..'z').to_a + ('0'..'9').to_a
 
   def to_param
     self.uid

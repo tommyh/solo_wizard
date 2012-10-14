@@ -26,10 +26,10 @@ describe SoloistScript do
 
   describe "default values" do
     describe "uid" do
-      it "should auto generate a four digit uid" do
+      it "should auto generate a six digit uid" do
         soloist_script = FactoryGirl.create :soloist_script, :uid => nil
         soloist_script.uid.should be_present
-        soloist_script.uid.length.should == 4
+        soloist_script.uid.length.should == 6
       end
     end
   end
