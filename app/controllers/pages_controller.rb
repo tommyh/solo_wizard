@@ -6,7 +6,6 @@ class PagesController < ApplicationController
   before_filter :build_soloist_script_with_default_recipes, :only => [:home]
 
   def home
-    @default_soloist_script = SoloistScript.order("id ASC").first
   end
 
   # Error page to test error monitoring is working

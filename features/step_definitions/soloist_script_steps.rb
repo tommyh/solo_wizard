@@ -37,10 +37,6 @@ Then /^an error message should appear telling me I need to choose some recipes$/
   page.should have_content("Please check some of the boxes below.")
 end
 
-Given /^a default soloist script has been created$/ do
-  @default_soloist_script = FactoryGirl.create :soloist_script
-end
-
 Given /^some recipes have been created$/ do
   recipe_group_1 = FactoryGirl.create :recipe_group
   recipe_group_2 = FactoryGirl.create :recipe_group
@@ -48,9 +44,4 @@ Given /^some recipes have been created$/ do
   FactoryGirl.create :recipe, :recipe_group => recipe_group_1
   FactoryGirl.create :recipe, :recipe_group => recipe_group_1
   FactoryGirl.create :recipe, :recipe_group => recipe_group_2
-end
-
-Then /^there should be a real soloist script example$/ do
-  page.should have_content("use our default install script w/ sensible defaults")
-  page.should have_content(soloist_script_path(@default_soloist_script, :format => "sh"))
 end

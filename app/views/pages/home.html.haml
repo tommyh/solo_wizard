@@ -20,22 +20,7 @@
     :plain
       <iframe src="http://player.vimeo.com/video/25329849?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
-
-- if @default_soloist_script.present?
-  #sw-default
-    %h3 Option 1 - use our default install script w/ sensible defaults:
-    %pre.code
-      = @default_soloist_script.shell_install_command
-    %p
-      Executing this one command will install all of the software which is checked below.
-    %p
-      Note: If you'd rather download the script, you can save the
-      = link_to "file", soloist_script_url(@default_soloist_script, :format => "sh")
-      to your hard drive.
-
-
-
 #sw-custom
-  %h3 Option 2 - create a custom SoloWizard script:
-  %p Select your recipes and click the button - we will build a custom script for you, which you can bookmark or share with others.
+  %h3 create your custom Solo Wizard script:
+  %p Select which recipes you'd like use and then click the button - we will build a custom script for you, which you can bookmark or share with others.
   = render "soloist_scripts/form"

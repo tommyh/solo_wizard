@@ -2,28 +2,6 @@ require 'spec_helper'
 
 describe SoloWizardTasks do
 
-  describe "#create_first_soloist_script" do
-    before do
-      FactoryGirl.create :recipe, :checked_by_default => true
-      FactoryGirl.create :recipe, :checked_by_default => false
-      FactoryGirl.create :recipe, :checked_by_default => true
-    end
-
-    it "should create a soloist script" do
-      lambda {
-        SoloWizardTasks.new.create_first_soloist_script
-      }.should change(SoloistScript, :count).by(1)
-    end
-
-    it "should give it all of the recipes with checked_by_default of true" do
-      SoloWizardTasks.new.create_first_soloist_script
-      SoloistScript.all.count.should == 1
-      soloist_script = SoloistScript.first
-
-      soloist_script.recipes.size.should == 2
-    end
-  end
-
   describe "#create_pivotal_workstation_recipies" do
     it "should create some Recipe Groups" do
       lambda {

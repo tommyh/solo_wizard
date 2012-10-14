@@ -2,11 +2,6 @@ require File.expand_path("config/environment.rb")
 
 class SoloWizardTasks < Thor
 
-  desc "create_first_soloist_script", "Create the first soloist script"
-  def create_first_soloist_script
-    SoloistScript.create(:recipes => Recipe.with_checked_by_default)
-  end
-
   desc "clean_all_tables", "Empty out all of the tables"
   def clean_all_tables
     SoloistScript.destroy_all
