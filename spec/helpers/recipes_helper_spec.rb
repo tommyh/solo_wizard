@@ -12,7 +12,7 @@ describe RecipesHelper do
 
         it "should include the recipes description" do
           description = helper.recipe_details_description(@recipe)
-          description.should include("<p>this recipe rocks</p>")
+          description.should include("<p class=\"recipe-description\">this recipe rocks</p>")
         end
 
         it "should include the github link" do
@@ -34,6 +34,11 @@ describe RecipesHelper do
           description.should include("<a ")
           description.should include("href")
           description.should include("http://www.fake.com")
+        end
+
+        it "should not include a recipe description" do
+          description = helper.recipe_details_description(@recipe)
+          description.should_not include("<p ")
         end
       end
     end
