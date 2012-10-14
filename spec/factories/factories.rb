@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :recipe do
     sequence(:name) {|n| "pivotal_workstation:foo_#{n}" }
+    description "This recipe will improve your life because of X, Y, AND Z!"
     recipe_group
     checked_by_default true
   end

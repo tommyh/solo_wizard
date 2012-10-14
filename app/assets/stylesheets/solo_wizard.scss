@@ -219,7 +219,7 @@ pre.code {
 	margin-bottom: 5px;
 	display:inline-block;
 
-    &:hover .view-recipe { display: inline; }
+    &:hover .recipe-details { display: inline; }
 }
 
 .recipe-pair input {
@@ -244,8 +244,12 @@ pre.code {
 	margin: 0 5px 5px 5px;
 }
 
-.recipe-pair .view-recipe {
+.recipe-pair .recipe-details {
     display: none;
+}
+
+.recipe-description {
+    margin: 0;
 }
 
 .submit-button {

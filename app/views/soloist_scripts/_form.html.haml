@@ -14,7 +14,9 @@
               .recipe-pair
                 = check_box_tag :recipe_ids, recipe.id, @soloist_script.recipes.include?(recipe), :name => 'soloist_script[recipe_ids][]'
                 = label_tag :recipe_ids, recipe.name
-                = link_to "view recipe", recipe.github_url, :class => "view-recipe", :target => "_blank"
+                = link_to "view recipe", recipe.github_url, :class => "recipe-details",
+                  :data => { :details => { :title => recipe.name, :description => recipe_details_description(recipe) } }
+
 
       .submit_button
         = f.submit "create my script", :class => "awesome"
