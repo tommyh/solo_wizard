@@ -1,11 +1,9 @@
 #sw-tagline
-  %p Many teams use chef to manage their production machines, but developers often build their development boxes by hand.  SoloWizard makes it painless to create a customized chef solo script to get your development machine humming: mysql, sublime text, .bash_profile tweaks to OS-X settings - it's all there!
+  %p.tldr tl;dr: You are a few clicks away from a custom chef script for your OS-X development machine.
 
 #sw-explained
   #sw-description
-    %p.built-upon
-      SoloWizard is built ontop of 3 popular and well supported open source projects:
-      = "#{link_to 'Chef Solo', 'http://wiki.opscode.com/display/chef/Chef+Solo', :target => '_blank'}, the #{link_to 'pivotal_workstation', 'https://github.com/pivotal/pivotal_workstation', :target => '_blank'} cookbook, and the #{link_to 'soloist', 'https://github.com/mkocher/soloist', :target => '_blank'} gem.".html_safe
+    %p Many teams use chef to manage their production machines, but developers often build their development boxes by hand.  SoloWizard makes it painless to create a customized chef solo script to get your development machine humming: mysql, sublime text, .bash_profile tweaks to OS-X settings - it's all there!
 
     .dependencies
       %p Dependencies:
@@ -18,9 +16,13 @@
 
   #sw-video
     :plain
-      <iframe src="http://player.vimeo.com/video/25329849?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+      <iframe src="http://player.vimeo.com/video/25329849?title=0&amp;byline=0&amp;portrait=0" width="330" height="195" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 #sw-custom
   %h3 create your custom Solo Wizard script:
   %p Select which recipes you'd like use and then click the button - we will build a custom script for you, which you can bookmark or share with others.
   = render "soloist_scripts/form"
+
+%p.built-upon
+  SoloWizard is built ontop of 3 popular and well supported open source projects:
+  = "#{link_to 'Chef Solo', 'http://wiki.opscode.com/display/chef/Chef+Solo', :target => '_blank'}, the #{link_to 'pivotal_workstation', 'https://github.com/pivotal/pivotal_workstation', :target => '_blank'} cookbook, and the #{link_to 'soloist', 'https://github.com/mkocher/soloist', :target => '_blank'} gem.".html_safe

@@ -1,5 +1,11 @@
 module RecipesHelper
 
+  def recipe_details_title(recipe)
+    return "" if recipe.nil?
+
+    "pivotal_workstation::#{recipe.name}"
+  end
+
   def recipe_details_description(recipe)
     return "" if recipe.nil?
 

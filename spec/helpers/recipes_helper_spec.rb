@@ -2,6 +2,21 @@ require 'spec_helper'
 
 describe RecipesHelper do
 
+  describe ".recipe_details_title" do
+    context "with a recipe" do
+      it "should return the full pivotal workstation name" do
+        recipe = FactoryGirl.create :recipe, :name => "foo"
+        helper.recipe_details_title(recipe).should == "pivotal_workstation::foo"
+      end
+    end
+
+    context "without a recipe" do
+      it "should return an empty string" do
+        helper.recipe_details_title(nil).should == ""
+      end
+    end
+  end
+
   describe ".recipe_details_description" do
     context "with a recipe" do
       context "with a description" do
