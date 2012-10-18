@@ -227,7 +227,7 @@ p.built-upon {
 	margin-bottom: 5px;
 	display:inline-block;
 
-    &:hover .recipe-details { display: inline; }
+    &:hover .recipe-details { visibility: visible; }
 }
 
 .recipe-pair input {
@@ -253,7 +253,7 @@ p.built-upon {
 }
 
 .recipe-pair .recipe-details {
-    display: none;
+    visibility: hidden;
 }
 
 .recipe-description {
