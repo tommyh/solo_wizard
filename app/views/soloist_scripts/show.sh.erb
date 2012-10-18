@@ -1,8 +1,15 @@
 #!/bin/bash
-
-#  --- SoloWizard documentation here ---
-
-
+# This shell script was created at solowizard.com
+#
+# Usage:
+#   Running the script remotely:
+#     <%= @soloist_script.shell_install_command.html_safe %>
+#   Running the script if you have downloaded it:
+#     ./<%= @soloist_script.uid %>.sh
+#
+# http://github.com/tommyh/solo_wizard
+# (c) 2012, Tom Hallett
+# This script may be freely distributed under the MIT license.
 
 pushd `pwd`
 if rvm --version 2>/dev/null; then
