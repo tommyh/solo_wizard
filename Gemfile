@@ -23,7 +23,7 @@ group :test do
   gem "factory_girl", '4.1.0'
   gem "factory_girl_rails", "4.1.0"
   gem "cucumber", "1.1.4"
-  gem "cucumber-rails", "1.2.1"
+  gem "cucumber-rails", "1.2.1", :require => false
   gem 'database_cleaner'
   gem "capybara", "1.1.2"
   gem "launchy", "2.0.5"
