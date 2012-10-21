@@ -226,7 +226,10 @@ p.built-upon {
 	width:525px;
 	margin-bottom: 5px;
 	display:inline-block;
+}
 
+.no-touch .recipe-pair {
+    .recipe-details { visibility: hidden; }
     &:hover .recipe-details { visibility: visible; }
 }
 
@@ -250,10 +253,6 @@ p.built-upon {
 	color:#424242;
 	width: 300px;
 	margin: 0 5px 5px 5px;
-}
-
-.recipe-pair .recipe-details {
-    visibility: hidden;
 }
 
 .recipe-description {

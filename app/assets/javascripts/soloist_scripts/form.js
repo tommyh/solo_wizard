@@ -27,4 +27,11 @@ $(document).ready(function(){
     $(this).qtip(qTipOptions);
   });
 
+  var isTouchDevice = !!('ontouchstart' in window);
+  if(isTouchDevice){
+    $("html").addClass("touch");
+  } else {
+    $("html").addClass("no-touch");
+  }
+
 });
