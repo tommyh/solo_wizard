@@ -119,10 +119,6 @@ p.tldr {
     font-weight: bold;
 }
 
-p.built-upon {
-    margin-top: 90px;
-}
-
 #sw-tagline p, #sw-description p {
 	font-size:16px;
 }
@@ -135,6 +131,25 @@ p.built-upon {
 	width:460px;
 	display:inline-block;
 	vertical-align:top;
+}
+
+#sw-faq {
+    margin-top: 80px;
+    ul { list-style: none; }
+
+    .qa { margin-bottom: 60px; }
+
+    .left {
+        display: inline-block;
+        width: 20px;
+        font-weight: bold;
+    }
+
+    .right {
+        display: inline-block;
+        width: 720px;
+        vertical-align: top;
+    }
 }
 
 #sw-video {
@@ -314,18 +329,6 @@ input.awesome {
 	text-align:right;
 	line-height:7px;
 	display:inline-block;
-}
-
-#sw-description .dependencies {
-    margin-top: 30px;
-}
-
-#sw-description .dependencies p {
-    margin-bottom: 0;
-}
-
-#sw-description .dependencies ul {
-    margin-top: 0;
 }
 
 .flash-message {
