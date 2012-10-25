@@ -135,7 +135,7 @@ p.tldr {
 
 #sw-faq {
     margin-top: 80px;
-    ul { list-style: none; }
+    ul { list-style: none; padding-left: 0; }
 
     .qa { margin-bottom: 60px; }
 
@@ -147,7 +147,7 @@ p.tldr {
 
     .right {
         display: inline-block;
-        width: 720px;
+        width: 810px;
         vertical-align: top;
     }
 }
