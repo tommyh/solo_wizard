@@ -35,7 +35,7 @@ Start your server:
 rails s
 ```
 
-Optional: If you'd like to use the same webserver that is used in production (thin):
+Optional: If you'd like to use foreman, which is used in production, skip "rails s" and perform the following:
 
 ```
 cp .env-example .env
