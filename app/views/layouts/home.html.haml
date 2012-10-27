@@ -16,4 +16,11 @@
       #content
         = yield
 
+    #footer
+      %p
+        Contact me:
+        = link_to "@tommyhallett", "http://twitter.com/tommyhallett", :target => "_blank"
+        or open an issue on github:
+        = link_to "tommyh/solo_wizard", "https://github.com/tommyh/solo_wizard", :target => "_blank"
+
     = include_analytics_tracking
