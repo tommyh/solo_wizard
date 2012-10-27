@@ -5,7 +5,7 @@
   #sw-description
     %p Many teams use chef to manage their production machines, but developers often build their development boxes by hand.  SoloWizard makes it painless to create a configurable chef solo script to get your development machine humming: mysql, sublime text, .bash_profile tweaks to OS-X settings - it's all there!
     %p
-      Dependencies: OS-X Mountain Lion and Xcode
+      Dependencies: Xcode and OS-X Mountain Lion
       = link_to "more information", "#faq-dependencies"
 
   #sw-video
@@ -32,12 +32,24 @@
     %li.qa#faq-dependencies
       .question
         .left Q:
-        .right I need to have Mountain Lion and Xcode installed?
+        .right Do I need to have Xcode installed and be running on Mountain Lion?
 
       .answer
         .left A:
         .right
           Sorta.
+          %p
+            %strong Xcode:
+            Many of the recipes use homebrew which requires either XCode or the XCode Command Line Tools.  The choice is yours!
+          %ul
+            %li
+              + Xcode is a 5Gb download and can be downloaded for free from the Mac Store:
+              = link_to "install video"
+            %li
+              + The Xcode Command Line Tools are much smaller but require an apple developer account:
+              = link_to "install instructions", "http://www.bloggure.info/work/installing-homebrew-without-xcode.html"
+
+          %br
           %p
             %strong Lion:
             If you are still on OS-X Lion, you can still use Solo Wizard, but you'll have to jump through a few hoops.
@@ -54,12 +66,6 @@
               %br
               %code git checkout last_lion_release
             %li Run the script and hope for the best!
-
-          %p
-            %strong Xcode:
-            Many of the recipes use homebrew which requires either XCode or the XCode Command Line Tools.  Xcode is a 5Gb download and can be downloaded from the Mac Store, while the Xcode Command Line Tools are much smaller but require an apple developer account - the choice is yours.
-          %ul
-            %li= link_to "Xcode Command Line Tools installation", "http://www.bloggure.info/work/installing-homebrew-without-xcode.html"
 
     %li.qa#faq-multiple-runs
       .question
