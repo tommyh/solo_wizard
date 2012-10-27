@@ -6,7 +6,7 @@
     %p Many teams use chef to manage their production machines, but developers often build their development boxes by hand.  SoloWizard makes it painless to create a configurable chef solo script to get your development machine humming: mysql, sublime text, .bash_profile tweaks to OS-X settings - it's all there!
     %p
       Dependencies: Xcode and OS-X Mountain Lion
-      = link_to "more information", "#faq-dependencies"
+      = link_to "(read the faq for more details)", "#faq-dependencies"
 
   #sw-video
     :plain
@@ -40,31 +40,34 @@
           Sorta.
           %p
             %strong Xcode:
-            Many of the recipes use homebrew which requires either XCode or the XCode Command Line Tools.  The choice is yours!
-          %ul
-            %li
-              + Xcode is a 5Gb download and can be downloaded for free from the Mac Store:
-              = link_to "install video"
-            %li
-              + The Xcode Command Line Tools are much smaller but require an apple developer account:
-              = link_to "install instructions", "http://www.bloggure.info/work/installing-homebrew-without-xcode.html"
+            Many of the recipes use homebrew which require some utilites your mac doesn't have by default.
+            You have 2 options: install Xcode from the App Store,
+            or install the Xcode Command Line Tools from Apple's developer site.
+
+          %p
+            Xcode is a whopping 5GB's, so the command line tools are a faster download,
+            but if you are interested in iPhone development, I would just go with Xcode.  Its up to you!
+
+          %p
+            For details on how to install the Xcode Command Line Tools, here's a good
+            = link_to "blog article.", "http://www.bloggure.info/work/installing-homebrew-without-xcode.html", :target => "_blank"
 
           %br
           %p
-            %strong Lion:
-            If you are still on OS-X Lion, you can still use Solo Wizard, but you'll have to jump through a few hoops.
-            The pivotal_workstation recipes only support Mountain Lion, but they did cut a tag "last_lion_release" tag.
-            WARNING: Because the Lion recipes are no longer supported by the pivotal_workstation maintainers, you may run into issues with the recipes not working...
+            %strong Mountain Lion:
+            The most up to date pivotal_workstation recipes are only compatible with Mountain Lion.
+            If you are on Lion and are willing to run recipes which are no longer supported, here are the steps:
+
           %ol
             %li
-              Uncheck any recipes which aren't on the last_lion_release tag:
-              = link_to "view the lion recipes", "https://github.com/pivotal/pivotal_workstation/tree/last_lion_release/recipes"
-            %li Create the Solo Wizard script like normal
+              Make sure you don't have any recipes checked which aren't present on the "last_lion_release" tag:
+              = link_to "view the last_lion_release recipes", "https://github.com/pivotal/pivotal_workstation/tree/last_lion_release/recipes", :target => "_blank"
+            %li Create a Solo Wizard script like normal
             %li Download the Solo Wizard shell script locally.
             %li
-              After the git clone statement, add the following:
+              Add the following line right before the line which has "soloist":
               %br
-              %code git checkout last_lion_release
+              %code cd pivotal_workstation && git checkout last_lion_release && cd ..
             %li Run the script and hope for the best!
 
     %li.qa#faq-multiple-runs
