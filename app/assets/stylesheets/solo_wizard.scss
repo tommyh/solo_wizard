@@ -51,7 +51,7 @@ h3 {
 
 
 pre.code {
-	margin-bottom: 0.5em;
+	margin-top: 10px;
 	background: #424242;
 	border: 1px solid #ffffff;
 	color:#ffffff;
@@ -330,6 +330,13 @@ input.awesome {
 	line-height:7px;
 	display:inline-block;
 }
+
+.soloist-script {
+    p { font-size: 25px; line-height: 1em; margin-top: 20px; margin-bottom: 0; }
+    .code { font-size: 16px; }
+}
+
+.download-option { margin-top: 30px;}
 
 .flash-message {
 	-moz-border-radius: 15px;

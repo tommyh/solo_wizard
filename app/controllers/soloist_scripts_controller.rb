@@ -6,7 +6,7 @@ class SoloistScriptsController < InheritedResources::Base
   before_filter :build_soloist_script_with_default_recipes, :only => [:new]
 
   def create
-    create!(:notice => "SoloWizard has successfully created your Soloist script. Ooooh-aaaah...")
+    create!(:notice => "Your SoloWizard has been created successfully!")
   end
 
   private

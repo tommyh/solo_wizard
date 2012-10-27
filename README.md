@@ -2,9 +2,9 @@
 
 This is the code for the solowizard.com web application.
 
-tl;dr: With SoloWizard, you are a few clicks away from a custom chef script for your OS-X development machine.
+tl;dr: With SoloWizard, you are a few clicks away from a configurable chef script for your OS-X development machine.
 
-Many teams use chef to manage their production machines, but developers often build their development boxes by hand. SoloWizard makes it painless to create a customized chef solo script to get your development machine humming: mysql, sublime text, .bash_profile tweaks to OS-X settings - it's all there!
+Many teams use chef to manage their production machines, but developers often build their development boxes by hand. SoloWizard makes it painless to create a configurable chef solo script to get your development machine humming: mysql, sublime text, .bash_profile tweaks to OS-X settings - it's all there!
 
 ## Running it locally ##
 

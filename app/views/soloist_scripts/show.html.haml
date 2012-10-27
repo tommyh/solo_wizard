@@ -1,3 +1,7 @@
 .soloist-script
-  %p Here's your custom solo wizard script:
+  %p Paste this into a terminal prompt:
   %pre.code= @soloist_script.shell_install_command
+
+%p.download-option
+  Or download the script and execute it locally:
+  = link_to "#{@soloist_script.uid}.sh", soloist_script_url(@soloist_script, :format => :sh)

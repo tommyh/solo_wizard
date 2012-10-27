@@ -21,6 +21,10 @@ Then /^I should be located on the show page for my soloist script$/ do
   current_path.should == soloist_script_path(@soloist_script)
 end
 
+Then /^I should see a message saying my soloist script has been created$/ do
+  page.should have_content("Your SoloWizard has been created successfully!")
+end
+
 Given /^I uncheck all of the recipes$/ do
   recipe_inputs = all("form#new_soloist_script input[type='checkbox']")
   recipe_inputs.each do |input|
