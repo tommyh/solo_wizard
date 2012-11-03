@@ -32,5 +32,10 @@ if [[ -d pivotal_workstation ]]; then
 else
   git clone https://github.com/pivotal/pivotal_workstation.git
 fi
+if [[ -d dmg ]]; then
+  cd dmg && git pull && cd ..
+else
+  git clone https://github.com/opscode-cookbooks/dmg.git
+fi
 soloist
 popd
