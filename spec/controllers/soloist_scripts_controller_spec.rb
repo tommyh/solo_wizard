@@ -113,6 +113,11 @@ describe SoloistScriptsController do
           response.body.should include("- pivotal_workstation::abc")
           response.body.should include("- pivotal_workstation::def")
         end
+
+        it "should checkout the dmg cookbook" do
+          get :show, :id => @soloist_script, :format => :sh
+          response.body.should include("git clone https://github.com/opscode-cookbooks/dmg.git")
+        end
       end
     end
 
