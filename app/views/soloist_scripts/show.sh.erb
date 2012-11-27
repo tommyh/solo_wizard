@@ -12,7 +12,7 @@
 # This script may be freely distributed under the MIT license.
 
 pushd `pwd`
-if rvm --version 2>/dev/null; then
+if rvm --version 2>/dev/null || rbenv 2>/dev/null; then
   gem install soloist
 else
   sudo gem install soloist
