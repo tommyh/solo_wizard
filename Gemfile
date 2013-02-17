@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
-ruby '1.9.2'
+ruby '1.9.3'
 
-gem 'rails', '3.2.0'
+gem 'rails', '3.2.12'
 gem 'mysql2', '0.3.11'
 gem 'jquery-rails', '2.1.3'
 gem "inherited_resources", "1.3.0"
@@ -18,10 +18,10 @@ gem "thin", "1.5.0"
 
 
 group :test do
-  gem 'turn', '0.8.2', :require => false
-  gem 'rspec', '2.8.0'
-  gem "factory_girl", '4.1.0'
-  gem "factory_girl_rails", "4.1.0"
+  gem 'turn', '0.9.6', :require => false
+  gem 'rspec', '2.12.0'
+  gem "factory_girl", '4.2.0'
+  gem "factory_girl_rails", "4.2.1"
   gem "cucumber", "1.1.4"
   gem "cucumber-rails", "1.2.1", :require => false
   gem 'database_cleaner'

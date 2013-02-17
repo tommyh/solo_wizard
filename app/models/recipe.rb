@@ -5,7 +5,7 @@ class Recipe < ActiveRecord::Base
   has_many :soloist_scripts, :through => :recipe_selections
 
   validates :name, :presence => true, :uniqueness => true
-  validates :recipe_group_id, :presence => true
+  validates :recipe_group, :presence => true
 
   scope :with_checked_by_default, where(:checked_by_default => true)
   scope :by_name, order("name ASC")
