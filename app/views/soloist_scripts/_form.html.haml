@@ -12,8 +12,9 @@
           %fieldset.recipe-selector
             - recipe_group.recipes.each do |recipe|
               .recipe-pair
-                = check_box_tag :recipe_ids, recipe.id, @soloist_script.recipes.include?(recipe), :name => 'soloist_script[recipe_ids][]'
-                = label_tag :recipe_ids, recipe.name
+                %label
+                  = check_box_tag :recipe_ids, recipe.id, @soloist_script.recipes.include?(recipe), :name => 'soloist_script[recipe_ids][]'
+                  = recipe.name
                 = link_to "view details", "#", :class => "recipe-details",
                   :data => { :details => { :title => recipe_details_title(recipe), :description => recipe_details_description(recipe) } }
 
