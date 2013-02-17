@@ -12,8 +12,14 @@ Pull down the solo_wizard source code and bundle
 
 ```
 git clone git@github.com:tommyh/solo_wizard.git
+
 cd solo_wizard
+
+# accept the rvm version
+
+gem install bundler --no-ri --no-rdoc
 bundle install
+
 rake db:migrate
 ```
 
@@ -23,7 +29,7 @@ Run a full build (rspec & cucumber) and confirm it passes:
 rake
 ```
 
-Seed your database:
+Seed your development database:
 
 ```
 thor solo_wizard_tasks:create_pivotal_workstation_recipes
