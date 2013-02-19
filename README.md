@@ -29,10 +29,11 @@ Run a full build (rspec & cucumber) and confirm it passes:
 rake
 ```
 
-Seed your development database:
+Seed your development database (this requires internet access):
 
 ```
-thor solo_wizard_tasks:create_pivotal_workstation_recipes
+thor solo_wizard_tasks:create_and_update_recipes_from_github
+thor solo_wizard_tasks:update_optional_metadata
 ```
 
 Start your server:

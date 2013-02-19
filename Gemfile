@@ -11,10 +11,11 @@ gem "haml-rails", "0.3.4"
 gem "sass", "3.2.1"
 gem "simple_form", "1.5.2"
 gem "uniquify", "0.1.1", :git => "git://github.com/tommyh/uniquify.git"
-gem "thor", "0.14.6"
+gem "thor", "0.17.0"
 gem "airbrake", "3.1.5"
 gem "newrelic_rpm", "3.5.0"
 gem "thin", "1.5.0"
+gem "github_api", "0.8.11"
 
 
 group :test do
@@ -24,9 +25,10 @@ group :test do
   gem "factory_girl_rails", "4.2.1"
   gem "cucumber", "1.1.4"
   gem "cucumber-rails", "1.2.1", :require => false
-  gem 'database_cleaner'
+  gem 'database_cleaner', "0.9.1"
   gem "capybara", "1.1.2"
   gem "launchy", "2.0.5"
+  gem "webmock", "1.9.2"
 end
 
 group :test, :development do
