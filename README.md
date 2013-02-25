@@ -49,6 +49,12 @@ cp .env-example .env
 foreman start
 ```
 
+## Notes ##
+
+* `thor solo_wizard_tasks:create_and_update_recipes_from_github` is run as a cron task every 10 minutes, so the recipes
+stay up to date.
+
+
 ## Special thanks ##
 
 SoloWizard is built ontop of 3 popular and well supported open source projects: [Chef Solo](http://wiki.opscode.com/display/chef/Chef+Solo), the [pivotal_workstation](https://github.com/pivotal/pivotal_workstation) cookbook, and the [soloist](https://github.com/mkocher/soloist) gem.
